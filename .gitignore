@@ -20,3 +20,5 @@ web/assets/
 *.orig
 .idea/*
 web/yaamp/.idea/
+
+copy2testbox.sh

@@ -71,7 +71,11 @@ bool coind_can_mine(YAAMP_COIND *coind, bool isaux)
 	if(!coind->enable) return false;
 	if(!coind->auto_ready) return false;
 	if(!rpc_connected(&coind->rpc)) return false;
-	if(!coind->height) return false;
+	/**
+	 * allow mining of a fresh new blockchain (with only genesis block!) 
+	 */
+	//if(!coind->height) return false;
+	
 	if(!coind->difficulty) return false;
 	if(coind->isaux != isaux) return false;
 //	if(isaux && !coind->aux.chainid) return false;
